@@ -36,10 +36,10 @@
 #ifndef E2END
   #define E2END 0xFFF // 4KB
 #endif
-#define HAL_EEPROM_SIZE (E2END + 1) // 16KB
+#define HAL_STM32F4_EEPROM_SIZE (E2END + 1) // 16KB
 
 #define _ALIGN(x) __attribute__ ((aligned(x))) // SDIO uint32_t* compat.
-static char _ALIGN(4) HAL_eeprom_data[HAL_EEPROM_SIZE];
+static char _ALIGN(4) HAL_eeprom_data[HAL_STM32F4_EEPROM_SIZE];
 
 #if ENABLED(SDSUPPORT)
 
