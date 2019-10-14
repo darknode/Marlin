@@ -1053,8 +1053,8 @@ uint8_t axes_need_homing(uint8_t axis_bits/*=0x07*/) {
 
 bool axis_unhomed_error(uint8_t axis_bits/*=0x07*/) {
   if ((axis_bits = axes_need_homing(axis_bits))) {
-    static const char home_first[] PROGMEM = MSG_HOME_FIRST;
-    char msg[sizeof(home_first)];
+    PGM_P home_first = GET_TEXT(MSG_HOME_FIRST);
+    char msg[strlen_P(home_first)+1];
     sprintf_P(msg, home_first,
       TEST(axis_bits, X_AXIS) ? "X" : "",
       TEST(axis_bits, Y_AXIS) ? "Y" : "",
@@ -1287,13 +1287,13 @@ void do_homing_move(const AxisEnum axis, const float distance, const feedRate_t 
     planner.set_machine_position_mm(target);
     target[axis] = distance;
 
-    #if IS_KINEMATIC && ENABLED(JUNCTION_DEVIATION)
+    #if IS_KINEMATIC && DISABLED(CLASSIC_JERK)
       const xyze_float_t delta_mm_cart{0};
     #endif
 
     // Set delta/cartesian axes directly
     planner.buffer_segment(target
-      #if IS_KINEMATIC && ENABLED(JUNCTION_DEVIATION)
+      #if IS_KINEMATIC && DISABLED(CLASSIC_JERK)
         , delta_mm_cart
       #endif
       , real_fr_mm_s, active_extruder
