@@ -24,6 +24,11 @@
 #include <stdint.h>
 #include "../../inc/MarlinConfig.h"
 
+#include <HardwareTimer.h>
+
+ERROR !!!
+// CHECK HERE: https://github.com/ghent360/Marlin/blob/f407-2209/Marlin/src/HAL/HAL_STM32_F4_F7/STM32F4/timers.h
+
 // ------------------------
 // Defines
 // ------------------------
@@ -119,16 +124,16 @@
 #define ENABLE_TEMPERATURE_INTERRUPT() HAL_timer_enable_interrupt(TEMP_TIMER_NUM)
 #define DISABLE_TEMPERATURE_INTERRUPT() HAL_timer_disable_interrupt(TEMP_TIMER_NUM)
 
-extern void Step_Handler(stimer_t *htim);
-extern void Temp_Handler(stimer_t *htim);
-#define HAL_STEP_TIMER_ISR() void Step_Handler(stimer_t *htim)
-#define HAL_TEMP_TIMER_ISR() void Temp_Handler(stimer_t *htim)
+extern void Step_Handler(HardwareTimer *htim);
+extern void Temp_Handler(HardwareTimer *htim);
+#define HAL_STEP_TIMER_ISR() void Step_Handler(HardwareTimer *htim)
+#define HAL_TEMP_TIMER_ISR() void Temp_Handler(HardwareTimer *htim)
 
 // ------------------------
 // Types
 // ------------------------
 
-typedef stimer_t stm32_timer_t;
+typedef HardwareTimer stm32_timer_t;
 
 // ------------------------
 // Public Variables
