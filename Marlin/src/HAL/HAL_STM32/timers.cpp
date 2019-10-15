@@ -20,6 +20,8 @@
  *
  */
 
+#ifndef HW_TIMERS
+
 #if defined(ARDUINO_ARCH_STM32) && !defined(STM32GENERIC)
 
 #include "HAL.h"
@@ -91,3 +93,5 @@ bool HAL_timer_interrupt_enabled(const uint8_t timer_num) {
 }
 
 #endif // ARDUINO_ARCH_STM32 && !STM32GENERIC
+
+#endif // !HW_TIMERS

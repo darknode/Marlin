@@ -24,11 +24,6 @@
 #include <stdint.h>
 #include "../../inc/MarlinConfig.h"
 
-#include <HardwareTimer.h>
-
-ERROR !!!
-// CHECK HERE: https://github.com/ghent360/Marlin/blob/f407-2209/Marlin/src/HAL/HAL_STM32_F4_F7/STM32F4/timers.h
-
 // ------------------------
 // Defines
 // ------------------------
@@ -124,22 +119,36 @@ ERROR !!!
 #define ENABLE_TEMPERATURE_INTERRUPT() HAL_timer_enable_interrupt(TEMP_TIMER_NUM)
 #define DISABLE_TEMPERATURE_INTERRUPT() HAL_timer_disable_interrupt(TEMP_TIMER_NUM)
 
-extern void Step_Handler(HardwareTimer *htim);
-extern void Temp_Handler(HardwareTimer *htim);
-#define HAL_STEP_TIMER_ISR() void Step_Handler(HardwareTimer *htim)
-#define HAL_TEMP_TIMER_ISR() void Temp_Handler(HardwareTimer *htim)
+#ifdef HW_TIMERS
+  extern void STEP_TIMER_CALLBACK(HardwareTimer *htim);
+  extern void TEMP_TIMER_CALLBACK(HardwareTimer *htim);
+  #define HAL_STEP_TIMER_ISR() void STEP_TIMER_CALLBACK(HardwareTimer *htim)
+  #define HAL_TEMP_TIMER_ISR() void TEMP_TIMER_CALLBACK(HardwareTimer *htim)
+#else
+  extern void Step_Handler(stimer_t *htim);
+  extern void Temp_Handler(stimer_t *htim);
+  #define HAL_STEP_TIMER_ISR() void Step_Handler(stimer_t *htim)
+  #define HAL_TEMP_TIMER_ISR() void Temp_Handler(stimer_t *htim)
+#endif
 
 // ------------------------
 // Types
 // ------------------------
 
-typedef HardwareTimer stm32_timer_t;
-
+#ifdef HW_TIMERS
+  typedef HardwareTimer* stm32_timer_t;
+#else
+  typedef stimer_t stm32_timer_t;
+#endif
 // ------------------------
 // Public Variables
 // ------------------------
 
 extern stm32_timer_t TimerHandle[];
+
+#ifdef HW_TIMERS
+  extern uint32_t TimerRates[];
+#endif
 
 // ------------------------
 // Public functions
@@ -151,18 +160,40 @@ void HAL_timer_disable_interrupt(const uint8_t timer_num);
 bool HAL_timer_interrupt_enabled(const uint8_t timer_num);
 
 FORCE_INLINE static uint32_t HAL_timer_get_count(const uint8_t timer_num) {
-  return __HAL_TIM_GET_COUNTER(&TimerHandle[timer_num].handle);
+  #ifdef HW_TIMERS
+    return TimerHandle[timer_num]->getCount(TICK_FORMAT);
+  #else
+    return __HAL_TIM_GET_COUNTER(&TimerHandle[timer_num].handle);
+  #endif
 }
 
 FORCE_INLINE static void HAL_timer_set_compare(const uint8_t timer_num, const uint32_t compare) {
+  #ifdef HW_TIMERS
+    TimerHandle[timer_num]->setOverflow(compare, TICK_FORMAT);
+    uint32_t cnt = TimerHandle[timer_num]->getCount(TICK_FORMAT);
+    if (cnt >= compare) {
+      TimerHandle[timer_num]->refresh();
+    }
+  #else
   __HAL_TIM_SET_AUTORELOAD(&TimerHandle[timer_num].handle, compare);
   if (HAL_timer_get_count(timer_num) >= compare)
     TimerHandle[timer_num].handle.Instance->EGR |= TIM_EGR_UG; // Generate an immediate update interrupt
+  #endif
 }
 
 FORCE_INLINE static hal_timer_t HAL_timer_get_compare(const uint8_t timer_num) {
-  return __HAL_TIM_GET_AUTORELOAD(&TimerHandle[timer_num].handle);
+  #ifdef HW_TIMERS
+    return TimerHandle[timer_num]->getOverflow(TICK_FORMAT);
+  #else
+    return __HAL_TIM_GET_AUTORELOAD(&TimerHandle[timer_num].handle);
+  #endif
 }
+
+#ifdef HW_TIMERS
+  FORCE_INLINE static uint32_t HAL_stepper_timer_rate(const uint8_t timer_num) {
+    return TimerRates[timer_num];
+  }
+#endif
 
 #define HAL_timer_isr_prologue(TIMER_NUM)
 #define HAL_timer_isr_epilogue(TIMER_NUM)
