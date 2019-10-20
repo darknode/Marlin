@@ -751,8 +751,8 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          600    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
+#define DEFAULT_ACCELERATION          1000   // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1000   // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   800    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
@@ -775,7 +775,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
+#define DEFAULT_EJERK    8.0  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -785,7 +785,7 @@
  *   http://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.067 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.042 // (mm) Distance from real junction edge
 #endif
 
 /**
@@ -919,7 +919,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { -48, -12, -2.7 }
+#define NOZZLE_TO_PROBE_OFFSET { -44, -12, -2.65 }
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
