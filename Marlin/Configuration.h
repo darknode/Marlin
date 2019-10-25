@@ -474,9 +474,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-  #define DEFAULT_Kp 34.32
-  #define DEFAULT_Ki 3.77
-  #define DEFAULT_Kd 78.20
+  #define DEFAULT_Kp 30.43
+  #define DEFAULT_Ki 3.17
+  #define DEFAULT_Kd 72.98
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -548,14 +548,14 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 200
+#define EXTRUDE_MINTEMP 190
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 450
+#define EXTRUDE_MAXLENGTH 200
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -919,7 +919,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { -44, -12, -2.65 }
+#define NOZZLE_TO_PROBE_OFFSET { -44, -12, -2.7 }
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
