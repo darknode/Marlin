@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
@@ -61,7 +61,7 @@
 #endif
 
 #if ENABLED(DWIN_CREALITY_LCD)
-  #include "../../../lcd/dwin/dwin.h"
+  #include "../../../lcd/dwin/e3v2/dwin.h"
 #endif
 
 #if HAS_MULTI_HOTEND
@@ -183,7 +183,7 @@ G29_TYPE GcodeSuite::G29() {
               faux = ENABLED(DEBUG_LEVELING_FEATURE) && DISABLED(PROBE_MANUALLY) ? parser.boolval('C') : no_action;
 
   // Don't allow auto-leveling without homing first
-  if (axis_unhomed_error()) G29_RETURN(false);
+  if (homing_needed_error()) G29_RETURN(false);
 
   if (!no_action && planner.leveling_active && parser.boolval('O')) { // Auto-level only if needed
     if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("> Auto-level not needed, skip");
@@ -685,8 +685,8 @@ G29_TYPE GcodeSuite::G29() {
       // Probe at 3 arbitrary points
 
       LOOP_L_N(i, 3) {
-        if (verbose_level) SERIAL_ECHOLNPAIR("Probing point ", int(i), "/3.");
-        TERN_(HAS_DISPLAY, ui.status_printf_P(0, PSTR(S_FMT " %i/3"), GET_TEXT(MSG_PROBING_MESH), int(i)));
+        if (verbose_level) SERIAL_ECHOLNPAIR("Probing point ", int(i + 1), "/3.");
+        TERN_(HAS_DISPLAY, ui.status_printf_P(0, PSTR(S_FMT " %i/3"), GET_TEXT(MSG_PROBING_MESH), int(i + 1)));
 
         // Retain the last probe position
         probePos = points[i];

@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #pragma once
@@ -150,8 +150,6 @@ namespace Language_pt {
   PROGMEM Language_Str MSG_HEATING_FAILED_LCD              = _UxGT("Aquecimento falhou");
   PROGMEM Language_Str MSG_ERR_MAXTEMP                     = _UxGT("Err: T Máxima");
   PROGMEM Language_Str MSG_ERR_MINTEMP                     = _UxGT("Err: T Mínima");
-  PROGMEM Language_Str MSG_ERR_MAXTEMP_BED                 = _UxGT("Err: T Base Máxima");
-  PROGMEM Language_Str MSG_ERR_MINTEMP_BED                 = _UxGT("Err: T Base Mínima");
   PROGMEM Language_Str MSG_HEATING                         = _UxGT("Aquecendo...");
   PROGMEM Language_Str MSG_BED_HEATING                     = _UxGT("Aquecendo base...");
   PROGMEM Language_Str MSG_DELTA_CALIBRATE                 = _UxGT("Calibração Delta");

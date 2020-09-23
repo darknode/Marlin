@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #pragma once
@@ -372,13 +372,13 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_ZPROBE_OUT                      = _UxGT("Sonde Z hors lit");
   PROGMEM Language_Str MSG_SKEW_FACTOR                     = _UxGT("Facteur écart");
   PROGMEM Language_Str MSG_BLTOUCH                         = _UxGT("BLTouch");
-  PROGMEM Language_Str MSG_BLTOUCH_SELFTEST                = _UxGT("Cmd: Self-Test");
-  PROGMEM Language_Str MSG_BLTOUCH_RESET                   = _UxGT("Cmd: Reset");
-  PROGMEM Language_Str MSG_BLTOUCH_STOW                    = _UxGT("Cmd: Ranger");
-  PROGMEM Language_Str MSG_BLTOUCH_DEPLOY                  = _UxGT("Cmd: Déployer");
-  PROGMEM Language_Str MSG_BLTOUCH_SW_MODE                 = _UxGT("Cmd: Mode SW");
-  PROGMEM Language_Str MSG_BLTOUCH_5V_MODE                 = _UxGT("Cmd: Mode 5V");
-  PROGMEM Language_Str MSG_BLTOUCH_OD_MODE                 = _UxGT("Cmd: Mode OD");
+  PROGMEM Language_Str MSG_BLTOUCH_SELFTEST                = _UxGT("Self-Test");
+  PROGMEM Language_Str MSG_BLTOUCH_RESET                   = _UxGT("Reset");
+  PROGMEM Language_Str MSG_BLTOUCH_STOW                    = _UxGT("Ranger");
+  PROGMEM Language_Str MSG_BLTOUCH_DEPLOY                  = _UxGT("Déployer");
+  PROGMEM Language_Str MSG_BLTOUCH_SW_MODE                 = _UxGT("Mode SW");
+  PROGMEM Language_Str MSG_BLTOUCH_5V_MODE                 = _UxGT("Mode 5V");
+  PROGMEM Language_Str MSG_BLTOUCH_OD_MODE                 = _UxGT("Mode OD");
   PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE              = _UxGT("Appliquer Mode");
   PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE_5V           = _UxGT("Mise en 5V");
   PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE_OD           = _UxGT("Mise en OD");
@@ -413,6 +413,8 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_COOLING                         = _UxGT("Refroidissement");
   PROGMEM Language_Str MSG_BED_HEATING                     = _UxGT("Lit en chauffe...");
   PROGMEM Language_Str MSG_BED_COOLING                     = _UxGT("Refroid. du lit...");
+  PROGMEM Language_Str MSG_PROBE_HEATING                   = _UxGT("Probe en chauffe...");
+  PROGMEM Language_Str MSG_PROBE_COOLING                   = _UxGT("Refroid. Probe...");
   PROGMEM Language_Str MSG_CHAMBER_HEATING                 = _UxGT("Chauffe caisson...");
   PROGMEM Language_Str MSG_CHAMBER_COOLING                 = _UxGT("Refroid. caisson...");
   PROGMEM Language_Str MSG_DELTA_CALIBRATE                 = _UxGT("Calibration Delta");
@@ -485,7 +487,6 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_RUNOUT_SENSOR                   = _UxGT("Capteur fil.");
   PROGMEM Language_Str MSG_KILL_HOMING_FAILED              = _UxGT("Echec origine");
   PROGMEM Language_Str MSG_LCD_PROBING_FAILED              = _UxGT("Echec sonde");
-  PROGMEM Language_Str MSG_M600_TOO_COLD                   = _UxGT("M600: Trop froid");
 
   PROGMEM Language_Str MSG_KILL_MMU2_FIRMWARE              = _UxGT("MAJ firmware MMU!!");
   PROGMEM Language_Str MSG_MMU2_CHOOSE_FILAMENT_HEADER     = _UxGT("CHOISIR FILAMENT");
@@ -508,7 +509,7 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_MMU2_RESETTING                  = _UxGT("Réinit. MMU...");
   PROGMEM Language_Str MSG_MMU2_EJECT_RECOVER              = _UxGT("Retrait, click");
 
-  PROGMEM Language_Str MSG_MIX_COMPONENT_N                 = _UxGT("Composante ~");
+  PROGMEM Language_Str MSG_MIX_COMPONENT_N                 = _UxGT("Composante =");
   PROGMEM Language_Str MSG_MIXER                           = _UxGT("Mixeur");
   PROGMEM Language_Str MSG_GRADIENT                        = _UxGT("Dégradé");
   PROGMEM Language_Str MSG_FULL_GRADIENT                   = _UxGT("Dégradé complet");

@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #pragma once
@@ -407,14 +407,14 @@ namespace Language_gl {
   PROGMEM Language_Str MSG_ZPROBE_OUT                      = _UxGT("Sonda-Z fóra Cama");
   PROGMEM Language_Str MSG_SKEW_FACTOR                     = _UxGT("Factor de Desviación");
   PROGMEM Language_Str MSG_BLTOUCH                         = _UxGT("BLTouch");
-  PROGMEM Language_Str MSG_BLTOUCH_SELFTEST                = _UxGT("Cmd: Auto-Test");
-  PROGMEM Language_Str MSG_BLTOUCH_RESET                   = _UxGT("Cmd: Reiniciar");
-  PROGMEM Language_Str MSG_BLTOUCH_STOW                    = _UxGT("Cmd: Recoller");
-  PROGMEM Language_Str MSG_BLTOUCH_DEPLOY                  = _UxGT("Cmd: Estender");
-  PROGMEM Language_Str MSG_BLTOUCH_SW_MODE                 = _UxGT("Cmd: Modo Software");
-  PROGMEM Language_Str MSG_BLTOUCH_5V_MODE                 = _UxGT("Cmd: Modo 5V");
-  PROGMEM Language_Str MSG_BLTOUCH_OD_MODE                 = _UxGT("Cmd: Modo OD");
-  PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE              = _UxGT("Cmd: Modo Almacenar");
+  PROGMEM Language_Str MSG_BLTOUCH_SELFTEST                = _UxGT("Auto-Test");
+  PROGMEM Language_Str MSG_BLTOUCH_RESET                   = _UxGT("Reiniciar");
+  PROGMEM Language_Str MSG_BLTOUCH_STOW                    = _UxGT("Recoller");
+  PROGMEM Language_Str MSG_BLTOUCH_DEPLOY                  = _UxGT("Estender");
+  PROGMEM Language_Str MSG_BLTOUCH_SW_MODE                 = _UxGT("Modo Software");
+  PROGMEM Language_Str MSG_BLTOUCH_5V_MODE                 = _UxGT("Modo 5V");
+  PROGMEM Language_Str MSG_BLTOUCH_OD_MODE                 = _UxGT("Modo OD");
+  PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE              = _UxGT("Modo Almacenar");
   PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE_5V           = _UxGT("Axustar BLTouch a 5V");
   PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE_OD           = _UxGT("Axustar BLTouch a OD");
   PROGMEM Language_Str MSG_BLTOUCH_MODE_ECHO               = _UxGT("Modo de Informe");
@@ -437,18 +437,12 @@ namespace Language_gl {
   PROGMEM Language_Str MSG_BABYSTEP_TOTAL                  = _UxGT("Total");
   PROGMEM Language_Str MSG_ENDSTOP_ABORT                   = _UxGT("Erro FinCarro");
   PROGMEM Language_Str MSG_HEATING_FAILED_LCD              = _UxGT("Fallo Quentando");
-  PROGMEM Language_Str MSG_HEATING_FAILED_LCD_BED          = _UxGT("Fallo Quent. Cama");
-  PROGMEM Language_Str MSG_HEATING_FAILED_LCD_CHAMBER      = _UxGT("Fallo Quent. Cámara");
   PROGMEM Language_Str MSG_ERR_REDUNDANT_TEMP              = _UxGT("Erro:Temp Redundante");
   PROGMEM Language_Str MSG_THERMAL_RUNAWAY                 = _UxGT("FUGA TÉRMICA");
   PROGMEM Language_Str MSG_THERMAL_RUNAWAY_BED             = _UxGT("FUGA TÉRMICA CAMA");
   PROGMEM Language_Str MSG_THERMAL_RUNAWAY_CHAMBER         = _UxGT("FUGA TÉRMICA CÁMARA");
   PROGMEM Language_Str MSG_ERR_MAXTEMP                     = _UxGT("Erro:TEMP MÁX");
   PROGMEM Language_Str MSG_ERR_MINTEMP                     = _UxGT("Erro:TEMP MÍN");
-  PROGMEM Language_Str MSG_ERR_MAXTEMP_BED                 = _UxGT("Erro:TEMP MÁX CAMA");
-  PROGMEM Language_Str MSG_ERR_MINTEMP_BED                 = _UxGT("Erro:TEMP MÍN CAMA");
-  PROGMEM Language_Str MSG_ERR_MAXTEMP_CHAMBER             = _UxGT("Erro:TEMP MÁX CÁMARA");
-  PROGMEM Language_Str MSG_ERR_MINTEMP_CHAMBER             = _UxGT("Erro:TEMP MÍN CÁMARA");
   PROGMEM Language_Str MSG_HALTED                          = _UxGT("IMPRESORA DETIDA");
   PROGMEM Language_Str MSG_PLEASE_RESET                    = _UxGT("Debe reiniciar!");
   PROGMEM Language_Str MSG_SHORT_DAY                       = _UxGT("d"); // One character only
@@ -528,7 +522,6 @@ namespace Language_gl {
   PROGMEM Language_Str MSG_RUNOUT_DISTANCE_MM              = _UxGT("Dist mm Sensor Fil");
   PROGMEM Language_Str MSG_KILL_HOMING_FAILED              = _UxGT("Fallo ao ir á Orixe");
   PROGMEM Language_Str MSG_LCD_PROBING_FAILED              = _UxGT("Fallo ao Sondar");
-  PROGMEM Language_Str MSG_M600_TOO_COLD                   = _UxGT("M600: Moi Frío");
 
   PROGMEM Language_Str MSG_MMU2_CHOOSE_FILAMENT_HEADER     = _UxGT("ESCOLLE FILAMENTO");
   PROGMEM Language_Str MSG_MMU2_MENU                       = _UxGT("MMU");
