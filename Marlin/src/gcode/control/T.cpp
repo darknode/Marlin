@@ -16,14 +16,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 
 #include "../gcode.h"
 #include "../../module/tool_change.h"
 
-#if ENABLED(DEBUG_LEVELING_FEATURE) || EXTRUDERS > 1
+#if EITHER(HAS_MULTI_EXTRUDER, DEBUG_LEVELING_FEATURE)
   #include "../../module/motion.h"
 #endif
 

@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #pragma once
@@ -409,14 +409,14 @@ namespace Language_hu {
   PROGMEM Language_Str MSG_ZPROBE_OUT                      = _UxGT("Z szonda tálcán kivül");
   PROGMEM Language_Str MSG_SKEW_FACTOR                     = _UxGT("Ferdeség Faktor");
   PROGMEM Language_Str MSG_BLTOUCH                         = _UxGT("BLTouch");
-  PROGMEM Language_Str MSG_BLTOUCH_SELFTEST                = _UxGT("Cmd: Önteszt");
-  PROGMEM Language_Str MSG_BLTOUCH_RESET                   = _UxGT("Cmd: Visszaállítás");
-  PROGMEM Language_Str MSG_BLTOUCH_STOW                    = _UxGT("Cmd: Elhelyez");
-  PROGMEM Language_Str MSG_BLTOUCH_DEPLOY                  = _UxGT("Cmd: Telepít");
-  PROGMEM Language_Str MSG_BLTOUCH_SW_MODE                 = _UxGT("Cmd: SW-Mód");
-  PROGMEM Language_Str MSG_BLTOUCH_5V_MODE                 = _UxGT("Cmd: 5V-Mód");
-  PROGMEM Language_Str MSG_BLTOUCH_OD_MODE                 = _UxGT("Cmd: OD-Mód");
-  PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE              = _UxGT("Cmd: Módok");
+  PROGMEM Language_Str MSG_BLTOUCH_SELFTEST                = _UxGT("Önteszt");
+  PROGMEM Language_Str MSG_BLTOUCH_RESET                   = _UxGT("Visszaállítás");
+  PROGMEM Language_Str MSG_BLTOUCH_STOW                    = _UxGT("Elhelyez");
+  PROGMEM Language_Str MSG_BLTOUCH_DEPLOY                  = _UxGT("Telepít");
+  PROGMEM Language_Str MSG_BLTOUCH_SW_MODE                 = _UxGT("SW-Mód");
+  PROGMEM Language_Str MSG_BLTOUCH_5V_MODE                 = _UxGT("5V-Mód");
+  PROGMEM Language_Str MSG_BLTOUCH_OD_MODE                 = _UxGT("OD-Mód");
+  PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE              = _UxGT("Módok");
   PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE_5V           = _UxGT("BLTouch 5V Mód");
   PROGMEM Language_Str MSG_BLTOUCH_MODE_STORE_OD           = _UxGT("BLTouch OD Mód");
   PROGMEM Language_Str MSG_BLTOUCH_MODE_ECHO               = _UxGT("Jelentés");
@@ -439,18 +439,12 @@ namespace Language_hu {
   PROGMEM Language_Str MSG_BABYSTEP_TOTAL                  = _UxGT("Teljes");
   PROGMEM Language_Str MSG_ENDSTOP_ABORT                   = _UxGT("Végállás megszakítva!");
   PROGMEM Language_Str MSG_HEATING_FAILED_LCD              = _UxGT("Fütés hiba!");
-  PROGMEM Language_Str MSG_HEATING_FAILED_LCD_BED          = _UxGT("Ágy fütés hiba!");
-  PROGMEM Language_Str MSG_HEATING_FAILED_LCD_CHAMBER      = _UxGT("Kamra fütés hiba!");
   PROGMEM Language_Str MSG_ERR_REDUNDANT_TEMP              = _UxGT("Hiba: SZÜKSÉGTELEN HÖFOK");
   PROGMEM Language_Str MSG_THERMAL_RUNAWAY                 = _UxGT("FÜTÉS KIMARADÁS");
   PROGMEM Language_Str MSG_THERMAL_RUNAWAY_BED             = _UxGT("ÁGY FÜTÉS KIMARADÁS");
   PROGMEM Language_Str MSG_THERMAL_RUNAWAY_CHAMBER         = _UxGT("KAMRA FÜTÉS KIMARADÁS");
   PROGMEM Language_Str MSG_ERR_MAXTEMP                     = _UxGT("Hiba: MAX Höfok");
   PROGMEM Language_Str MSG_ERR_MINTEMP                     = _UxGT("Hiba: MIN Höfok");
-  PROGMEM Language_Str MSG_ERR_MAXTEMP_BED                 = _UxGT("Hiba: MAX ÁGY HÖFOK");
-  PROGMEM Language_Str MSG_ERR_MINTEMP_BED                 = _UxGT("Hiba: MIN ÁGY HÖFOK");
-  PROGMEM Language_Str MSG_ERR_MAXTEMP_CHAMBER             = _UxGT("Hiba: MAX KAMRA HÖFOK");
-  PROGMEM Language_Str MSG_ERR_MINTEMP_CHAMBER             = _UxGT("Hiba: MIN KAMRA HÖFOK");
   PROGMEM Language_Str MSG_HALTED                          = _UxGT("A NYOMTATÓ LEFAGYOTT");
   PROGMEM Language_Str MSG_PLEASE_RESET                    = _UxGT("Indítsd újra!");
   PROGMEM Language_Str MSG_SHORT_DAY                       = _UxGT("n"); // Csak egy karakter
@@ -530,7 +524,6 @@ namespace Language_hu {
   PROGMEM Language_Str MSG_RUNOUT_DISTANCE_MM              = _UxGT("Túlfutás Táv. mm");
   PROGMEM Language_Str MSG_KILL_HOMING_FAILED              = _UxGT("Tájolási hiba");
   PROGMEM Language_Str MSG_LCD_PROBING_FAILED              = _UxGT("Szondázás hiba");
-  PROGMEM Language_Str MSG_M600_TOO_COLD                   = _UxGT("M600: Túl hideg");
 
   PROGMEM Language_Str MSG_MMU2_CHOOSE_FILAMENT_HEADER     = _UxGT("SZÁLVÁLASZTÁS");
   PROGMEM Language_Str MSG_MMU2_MENU                       = _UxGT("MMU");
